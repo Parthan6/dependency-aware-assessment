@@ -1,0 +1,72 @@
+@import '../../styles/variables.css';
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--bg-color);
+}
+
+.auth-box {
+  width: 400px;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  background: var(--secondary-color);
+}
+
+.logo h1 {
+  margin: 0.5rem 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.auth-form h2 {
+  margin-bottom: 1rem;
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.auth-form input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: var(--input-padding);
+  border: none;
+  border-radius: 999px;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.main-btn {
+  width: 100%;
+  padding: var(--input-padding);
+  background: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: background 0.3s;
+}
+
+.main-btn:hover {
+  background: var(--accent-color);
+}
+
+.forgot {
+  padding-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.toggle-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
