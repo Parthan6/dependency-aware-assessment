@@ -2,18 +2,23 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './AuthForm.css'
 
-export default function AuthForm({ isLogin, onSubmit }) {
+interface AuthFormProps {
+  isLogin: boolean;
+  onSubmit: (formData: { user: string; password: string; confirmPassword: string }) => void;
+}
+
+export default function AuthForm({ isLogin, onSubmit }: AuthFormProps) {
   const [formData, setFormData] = useState({
     user: '',
     password: '',
     confirmPassword: '',
   });
 
-  const handleChange = e => {
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     onSubmit(formData);
   };
@@ -33,7 +38,7 @@ export default function AuthForm({ isLogin, onSubmit }) {
             name="user"
             placeholder="User name"
             required
-            value={formData.email}
+            value={formData.user}
             onChange={handleChange}
           />
 

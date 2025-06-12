@@ -4,9 +4,14 @@ const API = axios.create({
   baseURL: 'http://localhost:5000/api/auth', // adjust as needed
 });
 
-export const login = async ({ email, password }) => {
+type AuthParams = {
+  username: string;
+  password: string;
+};
+
+export const login = async ({ username, password }: AuthParams) => {
   try {
-    const res = await API.post('/login', { email, password });
+    const res = await API.post('/login', { username, password });
     return res.data.user;
   } catch (err) {
     alert('Login failed');
@@ -14,9 +19,9 @@ export const login = async ({ email, password }) => {
   }
 };
 
-export const register = async ({ email, password }) => {
+export const register = async ({ username, password }: AuthParams) => {
   try {
-    await API.post('/register', { email, password });
+    await API.post('/register', { username, password });
     return true;
   } catch (err) {
     alert('Registration failed');

@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 export default function Register() {
   const navigate = useNavigate();
 
-  const handleRegister = async (data) => {
-    const success = await register(data);
+  const handleRegister = async (data: { user: string; password: string; }) => {
+    const success = await register({ username: data.user, password: data.password });
     if (success) {
       navigate('/login');
     }
